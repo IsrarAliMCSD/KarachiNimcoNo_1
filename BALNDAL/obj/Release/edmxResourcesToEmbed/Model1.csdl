@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KarachiNPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="KarachiNPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Abouts" EntityType="KarachiNPModel.About" />
+    <EntitySet Name="Categories" EntityType="KarachiNPModel.Category" />
+    <EntitySet Name="ContactDetails" EntityType="KarachiNPModel.ContactDetail" />
+    <EntitySet Name="ContactPersons" EntityType="KarachiNPModel.ContactPerson" />
+    <EntitySet Name="HomeSliders" EntityType="KarachiNPModel.HomeSlider" />
+    <EntitySet Name="NewsEvents" EntityType="KarachiNPModel.NewsEvent" />
+    <EntitySet Name="Products" EntityType="KarachiNPModel.Product" />
+    <EntitySet Name="sysdiagrams" EntityType="KarachiNPModel.sysdiagram" />
+    <EntitySet Name="Users" EntityType="KarachiNPModel.User" />
+    <AssociationSet Name="FK_Product_Category" Association="KarachiNPModel.FK_Product_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="AboutUsId" />
+    </Key>
+    <Property Name="AboutUsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="OrderNumber" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ImageURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsNewCategory" Type="Boolean" />
+    <NavigationProperty Name="Products" Relationship="KarachiNPModel.FK_Product_Category" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ContactDetail">
+    <Key>
+      <PropertyRef Name="CntactDetailId" />
+    </Key>
+    <Property Name="CntactDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContactDetailAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="ContactAddress" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ContactPerson">
+    <Key>
+      <PropertyRef Name="ContactPersonId" />
+    </Key>
+    <Property Name="ContactPersonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContactName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="ContactPersonDepartment" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="contactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ContactEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ImageUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrderNumber" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HomeSlider">
+    <Key>
+      <PropertyRef Name="HomeSliderId" />
+    </Key>
+    <Property Name="HomeSliderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HomeSliderTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HomSliderSubTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ImageURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="OrderNumber" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NewsEvent">
+    <Key>
+      <PropertyRef Name="NewsEventId" />
+    </Key>
+    <Property Name="NewsEventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewsEventDetail" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
+    <Property Name="NewsEventDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="ShowOnDashBoard" Type="Boolean" />
+    <Property Name="NewsEventTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="NewsEventCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ProductDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="ImageURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsNewProduct" Type="Boolean" />
+    <Property Name="ShowOnDesktop" Type="Boolean" />
+    <NavigationProperty Name="Category" Relationship="KarachiNPModel.FK_Product_Category" FromRole="Product" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Userid" />
+    </Key>
+    <Property Name="Userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_Product_Category">
+    <End Type="KarachiNPModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="KarachiNPModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

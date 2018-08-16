@@ -1,0 +1,10 @@
+D:\D Drive\Applications\WebForm\Ahmer\KarachiNimco1\KarachiNimco1\WebKarachiNimco\BALNDAL\bin\Release\BALNDAL.dll.config
+D:\D Drive\Applications\WebForm\Ahmer\KarachiNimco1\KarachiNimco1\WebKarachiNimco\BALNDAL\bin\Release\BALNDAL.dll
+D:\D Drive\Applications\WebForm\Ahmer\KarachiNimco1\KarachiNimco1\WebKarachiNimco\BALNDAL\bin\Release\BALNDAL.pdb
+D:\D Drive\Applications\WebForm\Ahmer\KarachiNimco1\KarachiNimco1\WebKarachiNimco\BALNDAL\bin\Release\EntityFramework.dll
+D:\D Drive\Applications\WebForm\Ahmer\KarachiNimco1\KarachiNimco1\WebKarachiNimco\BALNDAL\bin\Release\EntityFramework.SqlServer.dll
+D:\D Drive\Applications\WebForm\Ahmer\KarachiNimco1\KarachiNimco1\WebKarachiNimco\BALNDAL\bin\Release\EntityFramework.xml
+D:\D Drive\Applications\WebForm\Ahmer\KarachiNimco1\KarachiNimco1\WebKarachiNimco\BALNDAL\bin\Release\EntityFramework.SqlServer.xml
+D:\D Drive\Applications\WebForm\Ahmer\KarachiNimco1\KarachiNimco1\WebKarachiNimco\BALNDAL\obj\Release\BALNDAL.csprojResolveAssemblyReference.cache
+D:\D Drive\Applications\WebForm\Ahmer\KarachiNimco1\KarachiNimco1\WebKarachiNimco\BALNDAL\obj\Release\BALNDAL.dll
+D:\D Drive\Applications\WebForm\Ahmer\KarachiNimco1\KarachiNimco1\WebKarachiNimco\BALNDAL\obj\Release\BALNDAL.pdb
